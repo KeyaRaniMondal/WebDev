@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router';
 import signinImg from '../assets/signin.png';
 
 const SignIn = () => {
+  const navigate=useNavigate();
     return (
     <div
       className="min-h-screen bg-cover bg-center bg-no-repeat px-4 md:px-8 py-5"
@@ -35,7 +37,7 @@ const SignIn = () => {
         <div className="mt-10 text-[#737373] text-sm">
           <p>
             New to Netflix?{" "}
-            <span
+            <span onClick={()=>navigate('/signup')}
               className="text-white font-medium cursor-pointer ml-2 hover:underline"
             >
               Sign Up Now
