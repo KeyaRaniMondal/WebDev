@@ -1,8 +1,14 @@
 import { useNavigate } from 'react-router';
 import signinImg from '../assets/signin.png';
+import { useState } from 'react';
 
 const SignUp = () => {
   const navigate=useNavigate();
+  const [username,setUsername]=useState('');
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+
+  console.log(username,email,password);
     return (
     <div
       className="min-h-screen bg-cover bg-center bg-no-repeat px-4 md:px-8 py-5"
@@ -16,17 +22,23 @@ const SignUp = () => {
 
         <form  className="flex flex-col space-y-4">
           <input
+          value={username}
+          onChange={e=>setUsername(e.target.value)}
             type="text"
             placeholder="Enter Your Username"
             className="w-full h-[50px] bg-[#333] text-white rouded px-5 text-base"
           />
           <input
             type="email"
+             value={email}
+          onChange={e=>setEmail(e.target.value)}
             placeholder="Enter Your Email Address"
             className="w-full h-[50px] bg-[#333] text-white rouded px-5 text-base"
           />
           <input
             type="password"
+             value={password}
+          onChange={e=>setPassword(e.target.value)}
             placeholder="Enter Your Password"
             className="w-full h-[50px] bg-[#333] text-white rouded px-5 text-base"
           />
